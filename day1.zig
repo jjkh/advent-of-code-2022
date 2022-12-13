@@ -18,7 +18,7 @@ pub fn main() !void {
     defer elf_queue.deinit();
 
     var current_elf: u64 = 0;
-    var lines = std.mem.split(u8, input, "\n");
+    var lines = std.mem.split(u8, input, "\r\n");
     while (lines.next()) |line| {
         if (line.len == 0) {
             try elf_queue.add(current_elf);
